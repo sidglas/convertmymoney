@@ -1,6 +1,8 @@
 const express = require('express')
 const app = express()
 
+const port = process.env.PORT || 3000
+
 const path = require('path')
 const convert = require('./lib/convert')
 
@@ -29,7 +31,7 @@ app.get('/cotacao', (req, res) => {
     }
 })
 
-app.listen(3000, err => {
+app.listen(port, err => {
     if (err) {
         console.log('não foi possível iniciar')
     }else{
